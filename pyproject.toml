@@ -1,0 +1,33 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pomo"
+version = "0.1.0"
+description = "Minimalist macOS menu bar Pomodoro timer"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.9"
+authors = [
+    { name = "chii" }
+]
+keywords = ["pomodoro", "macos", "menubar", "timer", "productivity"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: MacOS X :: Cocoa",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: MacOS :: MacOS X",
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "rumps>=0.4.0",
+    "pyobjc-framework-Cocoa>=10.0",
+]
+
+[project.scripts]
+pomo = "pomo.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pomo"]
